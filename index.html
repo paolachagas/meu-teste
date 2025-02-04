@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ohhh mds?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #nao {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>VAMOS JOGAR CARALHO?</h1>
+        <div class="buttons">
+            <button id="sim" onclick="responderSim()">Sim</button>
+            <button id="nao" onmouseover="moverBotao()">Não</button>
+        </div>
+    </div>
+
+    <script>
+        function responderSim() {
+            alert("Ótimo! Entra no vava!");
+        }
+
+        function moverBotao() {
+            let botaoNao = document.getElementById("nao");
+            let x = Math.random() * (window.innerWidth - botaoNao.offsetWidth);
+            let y = Math.random() * (window.innerHeight - botaoNao.offsetHeight);
+            botaoNao.style.left = `${x}px`;
+            botaoNao.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
